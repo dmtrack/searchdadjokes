@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Typography from '../../components/Typography';
 import styles from '../../components/Intro/Intro.module.scss';
-import openSans from '../../utils/fonts/openSans';
+import firasans from '../../utils/fonts/firasans';
 
 export default function Error({
     error,
@@ -24,7 +24,7 @@ export default function Error({
                     <Typography
                         variant='h3'
                         align='center'
-                        className={openSans.className}
+                        className={firasans.className}
                         color='dark-blue'>
                         500 | Something went wrong on server..
                     </Typography>

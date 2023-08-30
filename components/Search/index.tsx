@@ -1,59 +1,47 @@
 'use client';
 
+import styles from './Search.module.scss';
+
 import cn from 'classnames';
 import Image from 'next/image';
 
-import openSans from '../../utils/fonts/openSans';
+import firasans from '../../utils/fonts/firasans';
 
 import Input from '../Input';
-import Button from '../Button';
 
 import backgroundImage from '../../assets/images/background-image.png';
-
-import styles from './Search.module.scss';
-import { FormEvent, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useInput } from '../../hooks/useInput';
+import { useGetJokesQuery } from '../../redux/api/jokeApiSlice';
+import JokeCardList from '../JokeCardList';
+import { useDebounce } from '../../hooks/useDebounce';
 
 function Search() {
     const [search, setSearch] = useState('');
-    const router = useRouter();
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setSearch('');
+    const input = useInput();
+    const debounced = useDebounce(input.value);
 
-        router.push(`/jokes/${search}`);
-    };
+    useEffect(() => {
+        if (debounced.length > 3) {
+            setSearch(debounced);
+        }
+    }, [debounced]);
+
+    const { data } = useGetJokesQuery(search);
+    const dataResult = data?.jokes.result.slice(0, 9);
 
     return (
-        <section className={styles.section}>
-            <div className={styles.background}>
-                <Image
-                    src={backgroundImage.src}
-                    width={backgroundImage.width}
-                    height={backgroundImage.height}
-                    priority
-                    alt='background'
-                    quality={100}
-                    className={styles.image}
+        <>
+            <div className={styles.section}>
+                <Input
+                    type='text'
+                    placeholder='Search'
+                    className={cn(styles.input, firasans.className)}
+                    {...input}
                 />
             </div>
-            <div className={styles.container}>
-                <div className={styles.wrapper}>
-                    <form className={styles.form} onSubmit={handleSubmit}>
-                        <Input
-                            value={search}
-                            name='email'
-                            placeholder='Search'
-                            onChange={(e) => setSearch(e.target.value)}
-                            className={cn(styles.input, openSans.className)}
-                        />
-                        <Button type='submit' size='l' color='green'>
-                            get weather
-                        </Button>
-                    </form>
-                </div>
-            </div>
-        </section>
+            <div>{dataResult && <JokeCardList cards={dataResult} />}</div>
+        </>
     );
 }
 

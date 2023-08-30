@@ -2,13 +2,13 @@ import { NextResponse } from 'next/server';
 
 type SearchResultType = Promise<JokeContainer> | Promise<ErrorType>;
 
-interface JokeContainer {
+interface IJokeContainer {
     total: number;
     result: IJoke[];
 }
 
 interface SearchResponce {
-    data: JokeContainer;
+    jokes: JokeContainer;
 }
 
 interface IJoke {

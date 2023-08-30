@@ -2,7 +2,7 @@
 import { ButtonHTMLAttributes } from 'react';
 import cn from 'classnames';
 
-import openSans from '../../utils/fonts/openSans';
+import firasans from '../../utils/fonts/firasans';
 
 import { FontWeight } from '../../ts/types';
 
@@ -25,14 +25,14 @@ function Button({
     type = 'button',
     size = 'm',
     color = 'white',
-    fontWeight = 'bold',
+    fontWeight = 'regular',
     className,
     ...props
 }: ButtonProps) {
     const buttonClassName = cn(
         className,
         styles.button,
-        openSans.className,
+        firasans.className,
         styles[`button--${size}`],
         styles[`button--${color}`],
         styles[`button--${fontWeight}`]

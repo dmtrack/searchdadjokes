@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.section {
+    display: flex;
+    padding: 128px 162px 306px 162px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    height: auto;
+    @media (max-width: 1400px) {
+        padding: 128px 0px 306px 0px;
+        height: auto;
+    }
+
+    @media (max-width: 810px) {
+        padding: 128px 0px 0px 0px;
+
+        height: auto;
+    }
+
+    @media (max-width: 480px) {
+        padding: 128px 0px 0px 0px;
+        height: auto;
+    }
+}

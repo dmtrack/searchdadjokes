@@ -5,7 +5,7 @@ import { FontWeight, TextAlign } from '../../ts/types';
 
 import styles from './Typography.module.scss';
 
-type Variant = 'p' | 'h1' | 'h2' | 'h3';
+type Variant = 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 
 type Color = 'black' | 'dark-blue' | 'gray' | 'white';
 
