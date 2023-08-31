@@ -2,7 +2,7 @@
 
 This app allows you to get 8 jokes per request from Chak Norris
 
-[deploy link](https://search-chak-jokes.onrender.com)
+[deploy link](https://searchchuckjokes.vercel.app)
 
 ## Preview
 

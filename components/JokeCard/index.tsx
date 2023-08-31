@@ -11,16 +11,17 @@ interface IJokeCardProps {
 }
 
 function JokeCard({ card }: IJokeCardProps) {
-    const timeStampDay = new Date(card.created_at).getDate();
-    const timeStampMonth = new Date(card.created_at).getMonth();
-    const timeStampYear = new Date(card.created_at).getFullYear();
-    const timeStamp = `${timeStampDay}.${timeStampMonth + 1}.${timeStampYear}`;
+    const dateArray = card.created_at.split(' ')[0].split('-');
+
+    const timeStamp = `${dateArray[2]}.${+dateArray[1]}.${dateArray[0]}`;
     return (
         <>
             {' '}
             <div className={cardstyles.stamp_container}>
                 <div className={cn(liststyles.text, firasans.className)}>
-                    {card.value}{' '}
+                    {card.value.length < 220
+                        ? card.value
+                        : `${card.value.slice(0, 219)}...`}
                 </div>
                 <div className={cn(cardstyles.stamp, montserrat.className)}>
                     <div className={cardstyles.stamp_part}>
