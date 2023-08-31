@@ -1,14 +1,14 @@
 @import '../../styles/variables.scss';
 
 .section {
-    /* height: min-content;
-    height: 150px;
+    height: min-content;
+    /* height: 150px;
     min-width: 518px; */
     /* padding: 0 100px;
     margin-bottom: 96px; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-content: space-between;
+    align-content: space-between; */
 
     /* @media (max-width: 1400px) {
         margin-bottom: 20px;
@@ -35,8 +35,8 @@
 }
 .stamp_container {
     display: grid;
-    height: 262px;
-    grid-template-row: auto 1fr auto;
+    min-height: 100%;
+    grid-template-row: auto 2fr auto;
     align-content: space-between;
 }
 .stamp {

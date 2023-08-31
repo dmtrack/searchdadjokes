@@ -19,9 +19,9 @@ function JokeCard({ card }: IJokeCardProps) {
             {' '}
             <div className={cardstyles.stamp_container}>
                 <div className={cn(liststyles.text, firasans.className)}>
-                    {card.value.length < 220
+                    {card.value.length < 150
                         ? card.value
-                        : `${card.value.slice(0, 219)}...`}
+                        : `${card.value.slice(0, 149)}...`}
                 </div>
                 <div className={cn(cardstyles.stamp, montserrat.className)}>
                     <div className={cardstyles.stamp_part}>
