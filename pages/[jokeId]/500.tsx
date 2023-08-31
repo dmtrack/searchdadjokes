@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import Typography from '../../components/Typography';
-import styles from '../../components/Intro/Intro.module.scss';
 import firasans from '../../utils/fonts/firasans';
+import styles from '../../components/Layout/Layout.module.scss';
 
 export default function Error({
     error,
