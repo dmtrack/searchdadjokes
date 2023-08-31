@@ -2,41 +2,11 @@
 
 .section {
     height: min-content;
-    /* height: 150px;
-    min-width: 518px; */
-    /* padding: 0 100px;
-    margin-bottom: 96px; */
-    /* display: flex;
-    flex-direction: column;
-    align-content: space-between; */
-
-    /* @media (max-width: 1400px) {
-        margin-bottom: 20px;
-        height: auto;
-        min-width: auto;
-    }
-
-    @media (max-width: 810px) {
-        padding: 0px 0px;
-        height: auto;
-        min-width: 450px;
-    }
-
-    @media (max-width: 480px) {
-        padding: 0px 0px;
-        height: auto;
-    } */
-
-    /* & .topContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    } */
 }
 .stamp_container {
     display: grid;
-    min-height: 100%;
-    grid-template-row: auto 2fr auto;
+    height: 100%;
+    grid-template-row: auto 1fr auto;
     align-content: space-between;
 }
 .stamp {
