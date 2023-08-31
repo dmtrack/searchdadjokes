@@ -2,7 +2,7 @@
 
 This app allows you to get 8 jokes per request from Chak Norris
 
-[deploy link](https://weather-app-coral-ten.vercel.app/)
+[deploy link](https://search-chak-jokes.onrender.com)
 
 ## Preview
 

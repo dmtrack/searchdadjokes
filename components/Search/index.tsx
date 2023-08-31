@@ -40,10 +40,12 @@ function Search() {
                     className={cn(styles.input, firasans.className)}
                     {...input}
                 />
-                {totalJokes && (
+                {totalJokes ? (
                     <div className={cn(styles.counter, montserrat.className)}>
                         Found jokes: {totalJokes}
                     </div>
+                ) : (
+                    ''
                 )}
             </section>
             <div>{dataResult && <JokeCardList cards={dataResult} />}</div>
