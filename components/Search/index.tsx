@@ -12,7 +12,7 @@ import Input from '../Input';
 import backgroundImage from '../../assets/images/background-image.png';
 import { useEffect, useState } from 'react';
 import { useInput } from '../../hooks/useInput';
-import { useGetJokesQuery } from '../../redux/api/jokeApiSlice';
+import { useGetJokesQuery } from '../../redux/api/jokesApi';
 import JokeCardList from '../JokeCardList';
 import { useDebounce } from '../../hooks/useDebounce';
 

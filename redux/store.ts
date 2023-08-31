@@ -1,19 +1,18 @@
 'use client';
 
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import apiSlice from './api/apiSlice';
-import jokesReducer from './slices/jokeSlice';
+
+import { jokesApi } from './api/jokesApi';
 
 const rootReducer = combineReducers({
-    jokes: jokesReducer,
-    [apiSlice.reducerPath]: apiSlice.reducer,
+    [jokesApi.reducerPath]: jokesApi.reducer,
 });
 
 export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,
         middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({}).concat(apiSlice.middleware),
+            getDefaultMiddleware({}).concat(jokesApi.middleware),
     });
 };
 
