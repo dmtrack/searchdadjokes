@@ -1,8 +1,5 @@
 import { useRouter } from 'next/router';
-import RootLayout from '../layout';
-import styles from '../../components/JokeCard/Card.module.scss';
-import firasans from '../../utils/fonts/firasans';
-import cn from 'classnames';
+import RootLayout from '../../components/Layout/layout';
 
 function Joke() {
     const router = useRouter();
@@ -10,11 +7,7 @@ function Joke() {
 
     return (
         <>
-            <RootLayout>
-                <div className={cn(styles.text, firasans.className)}>
-                    Joke page with id: {jokeId}
-                </div>
-            </RootLayout>
+            <RootLayout>Joke page with id: {jokeId}</RootLayout>
         </>
     );
 }
