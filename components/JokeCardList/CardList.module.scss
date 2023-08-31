@@ -7,7 +7,7 @@
     margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(6, [col] minmax(200px, auto));
-    /* grid-auto-flow: row dense; */
+    grid-auto-flow: row dense;
     justify-content: stretch;
     grid-gap: 20px;
 
