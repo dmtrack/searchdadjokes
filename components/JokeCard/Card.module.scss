@@ -1,0 +1,73 @@
+@import '../../styles/variables.scss';
+
+.section {
+    /* height: min-content;
+    height: 150px;
+    min-width: 518px; */
+    /* padding: 0 100px;
+    margin-bottom: 96px; */
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+    /* @media (max-width: 1400px) {
+        margin-bottom: 20px;
+        height: auto;
+        min-width: auto;
+    }
+
+    @media (max-width: 810px) {
+        padding: 0px 0px;
+        height: auto;
+        min-width: 450px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 0px 0px;
+        height: auto;
+    } */
+
+    /* & .topContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    } */
+}
+.stamp_container {
+    display: grid;
+    height: 262px;
+    grid-template-row: auto 1fr auto;
+    align-content: space-between;
+}
+.stamp {
+    /* background-color: $color-dark-blue; */
+
+    & .stamp_part {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px 40px;
+        margin-right: 40px;
+        margin-left: 40px;
+        margin-bottom: 25px;
+    }
+
+    & .stamp_text {
+        color: $color-gray;
+        font-size: $font-size-xxs;
+        line-height: $line-height-normal;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+
+.text {
+    color: $color-black;
+    font-size: $font-size-s;
+    line-height: $line-height-s;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 40px;
+    margin-bottom: 102px;
+    margin-left: 40px;
+    margin-right: 40px;
+}

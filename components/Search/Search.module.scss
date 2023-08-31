@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 626px;
+    height: 64px;
+    @media (max-width: 1400px) {
+    }
+
+    @media (max-width: 810px) {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    & .counter {
+        color: $color-black;
+        font-size: $font-size-xs;
+        line-height: $line-height-xs;
+        font-weight: 400;
+        font-style: normal;
+        align-self: flex-start;
+        margin-left: 30px;
+        height: 20px;
+        margin-top: 20px;
+    }
+}

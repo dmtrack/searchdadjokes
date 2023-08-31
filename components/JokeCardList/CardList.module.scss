@@ -1,0 +1,64 @@
+@import '../../styles/variables.scss';
+
+.section {
+    background-color: #fff;
+}
+.topContainer {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, [col] minmax(200px, auto));
+    grid-auto-flow: row dense;
+    justify-content: stretch;
+    grid-gap: 20px;
+
+    & .joke {
+        grid-column: span 2;
+        background-color: #fff;
+        box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
+        align-items: left;
+        margin: 0 auto;
+        align-self: start;
+
+        & .text {
+            color: $color-black;
+            font-size: $font-size-xs;
+            line-height: $line-height-xxs;
+            font-weight: 400;
+            font-style: normal;
+            margin-top: 30px;
+            margin-right: 30px;
+            margin-bottom: auto;
+            margin-left: 30px;
+        }
+    }
+    .joke:nth-of-type(1),
+    .joke:nth-of-type(2) {
+        grid-column: span 3;
+        background-color: #fff;
+        box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
+        align-items: left;
+        margin: 0 auto;
+        height: 262px;
+        align-self: start;
+
+        & .text {
+            color: $color-black;
+            font-size: $font-size-s;
+            line-height: $line-height-s;
+            font-weight: 400;
+            font-style: normal;
+            margin-top: 40px;
+            margin-bottom: auto;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+    }
+}
+
+.stamp-text {
+    color: $color-gray;
+    font-size: $font-size-xxs;
+    line-height: $line-height-normal;
+    font-weight: 400;
+    font-style: normal;
+}
