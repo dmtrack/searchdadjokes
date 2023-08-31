@@ -1,6 +1,6 @@
 import React from 'react';
-import Search from '../Search';
-import styles from './Layout.module.scss';
+import Search from '../components/Search';
+import styles from '../components/Layout/Layout.module.scss';
 
 export default function RootLayout({
     children,
@@ -10,7 +10,7 @@ export default function RootLayout({
     return (
         <>
             <div className={styles.section}>
-                <Search />
+                {/* <Search /> */}
                 {children}
             </div>
         </>

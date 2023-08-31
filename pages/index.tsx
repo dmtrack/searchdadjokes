@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import Search from '../components/Search';
+
+import styles from '../components/Layout/Layout.module.scss';
 
 export default function Home() {
     return (
@@ -6,7 +9,12 @@ export default function Home() {
             <Head>
                 <title>Chacks jokes searcher</title>
             </Head>
-            <main></main>
+            <main>
+                <div className={styles.section}>
+                    {' '}
+                    <Search />
+                </div>
+            </main>
         </>
     );
 }

@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, MutableRefObject } from 'react';
 import cn from 'classnames';
 
 import type { FontWeight } from '../../ts/types';
@@ -15,11 +15,13 @@ interface InputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, OmitProps> {
     size?: InputSize;
     color?: Color | 'white';
+    refik: MutableRefObject<null>;
     placeholderColor?: Color;
     fontWeight?: FontWeight;
 }
 
 function Input({
+    refik,
     disabled,
     size = 'm',
     color = 'white',
@@ -37,7 +39,7 @@ function Input({
         styles[`input--${fontWeight}`],
         styles[`input--placeholder-${placeholderColor}`]
     );
-    return <input {...props} className={inputClassName} />;
+    return <input {...props} className={inputClassName} ref={refik} />;
 }
 
 export default Input;

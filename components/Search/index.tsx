@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './Search.module.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useInput } from '../../hooks/useInput';
 import { useGetJokesQuery } from '../../redux/api/jokesApi';
 import { useDebounce } from '../../hooks/useDebounce';
@@ -12,9 +12,11 @@ import firasans from '../../utils/fonts/firasans';
 import Input from '../Input';
 import JokeCardList from '../JokeCardList';
 import montserrat from '../../utils/fonts/montserrat';
+import useAutoFocus from '../../hooks/useAutoFocus';
 
 function Search() {
     const [search, setSearch] = useState('');
+    const inputRef = useAutoFocus();
     const input = useInput();
     const debounced = useDebounce(input.value);
 
@@ -32,6 +34,7 @@ function Search() {
         <>
             <section className={styles.section}>
                 <Input
+                    refik={inputRef}
                     type='text'
                     placeholder='Search'
                     className={cn(styles.input, firasans.className)}
