@@ -28,18 +28,18 @@ function Search() {
     }, [debounced]);
 
     const { data } = useGetJokesQuery(search);
-    const dataResult = data?.jokes.result.slice(0, 9);
+    const dataResult = data?.jokes.result.slice(0, 8);
 
     return (
         <>
-            <div className={styles.section}>
+            <section className={styles.section}>
                 <Input
                     type='text'
                     placeholder='Search'
                     className={cn(styles.input, firasans.className)}
                     {...input}
                 />
-            </div>
+            </section>
             <div>{dataResult && <JokeCardList cards={dataResult} />}</div>
         </>
     );

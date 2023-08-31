@@ -7,10 +7,11 @@
     width: 626px;
     height: 64px;
 
-    & .input {
-        height: 100%;
-        margin: 0;
-        border-radius: 0px;
-        box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
+    @media (max-width: 1400px) {
+    }
+
+    @media (max-width: 810px) {
+        width: auto;
+        margin: 0 auto;
     }
 }

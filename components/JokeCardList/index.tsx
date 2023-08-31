@@ -7,17 +7,12 @@ interface IJokeCardListProps {
 }
 
 function JokeCardList({ cards }: IJokeCardListProps) {
-    console.log(cards, 'cards in list');
     return (
-        <div className={styles.section}>
+        <div className={styles.topContainer}>
             {cards.length > 0 ? (
                 cards.map((card, index) => (
-                    <div key={card.id}>
-                        {index < 2 ? (
-                            <JokeCard card={card} type='big' />
-                        ) : (
-                            <JokeCard card={card} type='normal' />
-                        )}
+                    <div key={card.id} className={styles.joke}>
+                        <JokeCard card={card} />
                     </div>
                 ))
             ) : (

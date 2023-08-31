@@ -20,6 +20,7 @@ interface InputProps
 }
 
 function Input({
+    disabled,
     size = 'm',
     color = 'white',
     placeholderColor = 'black',
@@ -28,6 +29,7 @@ function Input({
     ...props
 }: InputProps) {
     const inputClassName = cn(
+        disabled,
         className,
         styles.input,
         styles[`input--${size}`],
