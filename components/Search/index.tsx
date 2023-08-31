@@ -1,20 +1,17 @@
 'use client';
 
 import styles from './Search.module.scss';
-
-import cn from 'classnames';
-import Image from 'next/image';
-
-import firasans from '../../utils/fonts/firasans';
-
-import Input from '../Input';
-
-import backgroundImage from '../../assets/images/background-image.png';
 import { useEffect, useState } from 'react';
 import { useInput } from '../../hooks/useInput';
 import { useGetJokesQuery } from '../../redux/api/jokesApi';
-import JokeCardList from '../JokeCardList';
 import { useDebounce } from '../../hooks/useDebounce';
+
+import cn from 'classnames';
+import firasans from '../../utils/fonts/firasans';
+
+import Input from '../Input';
+import JokeCardList from '../JokeCardList';
+import montserrat from '../../utils/fonts/montserrat';
 
 function Search() {
     const [search, setSearch] = useState('');
@@ -29,6 +26,7 @@ function Search() {
 
     const { data } = useGetJokesQuery(search);
     const dataResult = data?.jokes.result.slice(0, 8);
+    const totalJokes = data?.jokes.total;
 
     return (
         <>
@@ -39,6 +37,11 @@ function Search() {
                     className={cn(styles.input, firasans.className)}
                     {...input}
                 />
+                {totalJokes && (
+                    <div className={cn(styles.counter, montserrat.className)}>
+                        Found jokes: {totalJokes}
+                    </div>
+                )}
             </section>
             <div>{dataResult && <JokeCardList cards={dataResult} />}</div>
         </>
