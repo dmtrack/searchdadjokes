@@ -2,7 +2,7 @@
 
 This app allows you to get 8 movies from according to your request
 
-[deploy link](https://searchchuckjokes.vercel.app)
+[deploy link](https://searchmovies-next.vercel.app)
 
 ## Preview
 
