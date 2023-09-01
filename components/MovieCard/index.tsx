@@ -18,7 +18,7 @@ function MovieCard({ card }: IMovieCardProps) {
             <div className={cardstyles.stamp_container}>
                 <div className={liststyles.movie}>
                     <div className={cn(liststyles.text, firasans.className)}>
-                        Title: {card.Title}
+                        {card.Title}
                     </div>
                     {card.Poster === 'N/A' ? (
                         ''
