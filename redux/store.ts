@@ -2,17 +2,17 @@
 
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import { jokesApi } from './api/jokesApi';
+import { movieApi } from './api/moviesApi';
 
 const rootReducer = combineReducers({
-    [jokesApi.reducerPath]: jokesApi.reducer,
+    [movieApi.reducerPath]: movieApi.reducer,
 });
 
 export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,
         middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({}).concat(jokesApi.middleware),
+            getDefaultMiddleware({}).concat(movieApi.middleware),
     });
 };
 

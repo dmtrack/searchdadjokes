@@ -1,24 +1,22 @@
 import { NextResponse } from 'next/server';
 
-type SearchResultType = Promise<JokeContainer> | Promise<ErrorType>;
+type SearchResultType = Promise<IMovieContainer> | Promise<ErrorType>;
 
-interface IJokeContainer {
-    total: number;
-    result: IJoke[];
+interface IMovieContainer {
+    Search: IMovie[];
+    totalResults: string;
 }
 
 interface SearchResponce {
-    jokes: JokeContainer;
+    movies: IMovieContainer;
 }
 
-interface IJoke {
-    categories: string[];
-    created_at: string;
-    icon_url: string;
-    id: string;
-    updated_at: string;
-    url: string;
-    value: string;
+interface IMovie {
+    Poster: string;
+    Title: string;
+    Type: string;
+    Year: string;
+    imdbID: string;
 }
 
 type ErrorType = {

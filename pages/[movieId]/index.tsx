@@ -3,11 +3,10 @@ import RootLayout from '../../components/Layout/layout';
 
 function Joke() {
     const router = useRouter();
-    const jokeId = router.query.jokeId;
-
+    const movieId = router.query.movieId;
     return (
         <>
-            <RootLayout>Joke page with id: {jokeId}</RootLayout>
+            <RootLayout>Movie page with id: {movieId}</RootLayout>
         </>
     );
 }

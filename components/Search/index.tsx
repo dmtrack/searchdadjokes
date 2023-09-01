@@ -3,14 +3,14 @@
 import styles from './Search.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import { useInput } from '../../hooks/useInput';
-import { useGetJokesQuery } from '../../redux/api/jokesApi';
+import { useGetJokesQuery } from '../../redux/api/moviesApi';
 import { useDebounce } from '../../hooks/useDebounce';
 
 import cn from 'classnames';
 import firasans from '../../utils/fonts/firasans';
 
 import Input from '../Input';
-import JokeCardList from '../JokeCardList';
+import JokeCardList from '../MovieCardList';
 import montserrat from '../../utils/fonts/montserrat';
 import useAutoFocus from '../../hooks/useAutoFocus';
 
@@ -27,9 +27,8 @@ function Search() {
     }, [debounced]);
 
     const { data } = useGetJokesQuery(search);
-    const dataResult = data?.jokes.result.slice(0, 8);
-    const totalJokes = data?.jokes.total;
-
+    const dataResult = data?.movies?.Search.slice(0, 8);
+    const totalJokes = data?.movies?.Search?.length;
     return (
         <>
             <section className={styles.section}>
@@ -42,7 +41,7 @@ function Search() {
                 />
                 {totalJokes ? (
                     <div className={cn(styles.counter, montserrat.className)}>
-                        Found jokes: {totalJokes}
+                        Found movies: {totalJokes}
                     </div>
                 ) : (
                     ''
