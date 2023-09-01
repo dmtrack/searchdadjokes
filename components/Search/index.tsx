@@ -27,8 +27,9 @@ function Search() {
     }, [debounced]);
 
     const { data } = useGetJokesQuery(search);
-    const dataResult = data?.movies?.Search.slice(0, 8);
+    const dataResult = data?.movies?.Search?.slice(0, 8);
     const totalJokes = data?.movies?.Search?.length;
+
     return (
         <>
             <section className={styles.section}>
