@@ -1,6 +1,6 @@
-## Search Chak jokes
+## Search Movies
 
-This app allows you to get 8 jokes per request from Chak Norris
+This app allows you to get 8 movies from according to your request
 
 [deploy link](https://searchchuckjokes.vercel.app)
 
